@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="15A225f" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MunchkinCompanion_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="xV3-n6-lyP" userLabel="slidersGroup">
+                            <items>
+                                <group width="1" alignment="left" id="u4o-Pt-QNB" userLabel="levelGroup">
+                                    <items>
+                                        <slider width="1" alignment="left" value="1" maximum="10" steps="10" minimumImage="levelDown" maximumImage="levelUp" id="lbc-bq-PTE" userLabel="levelSlider">
+                                            <color key="color" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="levelSliderDidChange:" destination="AgC-eL-Hgc" id="F7m-9f-1P0"/>
+                                            </connections>
+                                        </slider>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="fmV-B3-KU5" userLabel="combatGroup">
+                                    <items>
+                                        <slider width="1" alignment="left" maximum="20" steps="20" minimumImage="combatDown" maximumImage="combatUp" id="BuH-YZ-W2j" userLabel="combatSlider">
+                                            <color key="color" red="0.99215686270000003" green="0.29803921570000003" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="combatSliderDidChange:" destination="AgC-eL-Hgc" id="sSw-C7-As3"/>
+                                            </connections>
+                                        </slider>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="Okw-ZF-LVh" userLabel="oneShotGroup">
+                                    <items>
+                                        <slider width="1" alignment="left" minimum="-10" maximum="10" steps="20" minimumImage="oneShotDown" maximumImage="oneShotUp" id="M2K-Ex-mM1" userLabel="oneShotSlider">
+                                            <color key="color" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="oneShotSliderDidChange:" destination="AgC-eL-Hgc" id="dIj-L5-gK9"/>
+                                            </connections>
+                                        </slider>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <group width="121.5" alignment="left" id="5qI-VZ-cpw" userLabel="totalsGroup">
+                            <items>
+                                <label alignment="left" text="Total:" id="MEG-i4-Iv2"/>
+                                <label alignment="right" verticalAlignment="center" text="1" textAlignment="center" id="eWI-Ty-aRH"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="combatSlider" destination="BuH-YZ-W2j" id="Ogx-Dr-Slw"/>
+                        <outlet property="levelSlider" destination="lbc-bq-PTE" id="giW-Jy-64L"/>
+                        <outlet property="oneShotSlider" destination="M2K-Ex-mM1" id="TGQ-ll-t4w"/>
+                        <outlet property="resetButton" destination="5qg-ep-njb" id="m1I-P9-M2P"/>
+                        <outlet property="totalsLabel" destination="eWI-Ty-aRH" id="aBb-ux-65W"/>
+                        <segue destination="fjs-X6-O4V" kind="relationship" relationship="nextPage" id="KaU-5t-dEA"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="317" y="325"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="Q0M-ra-aAH">
+            <objects>
+                <controller id="fjs-X6-O4V">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="2he-IJ-Cty">
+                            <items>
+                                <group width="1" height="12" alignment="center" id="Aj8-1B-0ZK">
+                                    <items>
+                                        <label alignment="center" text="Info" textAlignment="center" id="Q1I-fD-0KU">
+                                            <fontDescription key="font" type="system" pointSize="12"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="moD-Fd-FXa">
+                                    <items>
+                                        <imageView alignment="left" image="levelDown" id="Fez-cP-qGg"/>
+                                        <imageView alignment="left" image="levelUp" id="W25-1H-tBw"/>
+                                        <label alignment="left" verticalAlignment="center" text="Level down/up" id="XZn-3X-GdR">
+                                            <fontDescription key="font" type="system" weight="thin" pointSize="12"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="Tbw-Lu-gVK">
+                                    <items>
+                                        <imageView alignment="left" image="combatDown" id="fo5-oC-Onf"/>
+                                        <imageView alignment="left" image="combatUp" id="ss6-BA-FcE"/>
+                                        <label alignment="left" verticalAlignment="center" text="Combat down/up" textAlignment="center" numberOfLines="0" minimumScaleFactor="0.0" id="BF9-kV-D6W">
+                                            <fontDescription key="font" type="system" weight="thin" pointSize="12"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="LBI-Hb-k8j">
+                                    <items>
+                                        <imageView alignment="left" image="oneShotDown" id="TTJ-cr-MeB"/>
+                                        <imageView alignment="left" image="oneShotUp" id="0ub-tk-Fk0"/>
+                                        <label alignment="left" verticalAlignment="center" text="One Shot down/up" id="ebm-2A-5jt">
+                                            <fontDescription key="font" type="system" weight="thin" pointSize="11"/>
+                                        </label>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" id="tFh-MB-nR3">
+                            <items>
+                                <label alignment="center" text="*One shot starts at 0, and can be a negative number" numberOfLines="3" minimumScaleFactor="0.0" id="x3m-8e-HgS">
+                                    <fontDescription key="font" type="system" pointSize="10"/>
+                                </label>
+                                <button height="20" alignment="center" verticalAlignment="bottom" title="Reset All" id="5qg-ep-njb">
+                                    <variation key="device=watch38mm" height="16"/>
+                                    <connections>
+                                        <action selector="resetButtonPressed" destination="AgC-eL-Hgc" id="61a-of-CyI"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="500" y="325"/>
+        </scene>
+    </scenes>
+</document>

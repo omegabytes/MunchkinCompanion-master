@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5CFBA9E3-3386-4C3A-BF6E-6BB906EC200A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MunchkinCompanion</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>553D1D8730EF0AA2980F137A4D5A62FB3FFA06F8</key>
+		<string>https://github.com/omegabytes/MunchkinCompanion.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MunchkinCompanion.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>553D1D8730EF0AA2980F137A4D5A62FB3FFA06F8</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/omegabytes/MunchkinCompanion.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>553D1D8730EF0AA2980F137A4D5A62FB3FFA06F8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>553D1D8730EF0AA2980F137A4D5A62FB3FFA06F8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MunchkinCompanion</string>
+		</dict>
+	</array>
+</dict>
+</plist>

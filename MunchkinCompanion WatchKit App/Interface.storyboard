@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="15A225f" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Counter_Alternate_1_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="Y4C-6Z-ANX">
+                            <items>
+                                <group width="1" alignment="left" isAccessibilityElement="YES" id="e90-yI-6g2" userLabel="levelGroup">
+                                    <items>
+                                        <slider width="1" alignment="left" value="1" maximum="10" steps="10" minimumImage="levelDown" maximumImage="levelUp" id="BoA-nN-WPO" userLabel="levelSlider">
+                                            <connections>
+                                                <action selector="levelSliderDidChange:" destination="AgC-eL-Hgc" id="tvL-VK-sIN"/>
+                                            </connections>
+                                        </slider>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="YCL-Ll-v0H" userLabel="combatGroup">
+                                    <items>
+                                        <slider width="1" alignment="left" value="1" maximum="20" steps="20" minimumImage="combatDown" maximumImage="combatUp" id="h9h-5n-fJL" userLabel="combatSlider">
+                                            <color key="color" red="0.99215686270000003" green="0.29803921570000003" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="combatSliderDidChange:" destination="AgC-eL-Hgc" id="sPB-jZ-dEf"/>
+                                            </connections>
+                                        </slider>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="qTe-Hs-f5J" userLabel="oneShotGroup">
+                                    <items>
+                                        <slider width="1" alignment="left" value="1" minimum="-11" maximum="10" steps="21" minimumImage="oneShotDown" maximumImage="oneShotUp" id="Zlu-9Q-8Ui" userLabel="oneShotSlider">
+                                            <color key="color" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="oneShotSliderDidChange:" destination="AgC-eL-Hgc" id="5bg-iw-RVx"/>
+                                            </connections>
+                                        </slider>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <group width="121.5" alignment="left" id="LXs-Fi-1B8" userLabel="totalsGroup">
+                            <items>
+                                <button width="74" height="1" alignment="left" title="Reset All" id="uhN-Zs-jdX">
+                                    <connections>
+                                        <action selector="resetButtonPressed" destination="AgC-eL-Hgc" id="Ici-Po-kuo"/>
+                                    </connections>
+                                </button>
+                                <label alignment="right" verticalAlignment="center" text="1" textAlignment="center" id="t3n-U8-3Qd"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="combatSlider" destination="h9h-5n-fJL" id="8YR-is-UTc"/>
+                        <outlet property="levelSlider" destination="BoA-nN-WPO" id="HeM-Ss-NCb"/>
+                        <outlet property="oneShotSlider" destination="Zlu-9Q-8Ui" id="m0E-qT-X3O"/>
+                        <outlet property="resetButton" destination="uhN-Zs-jdX" id="jj4-Zh-LX2"/>
+                        <outlet property="totalsLabel" destination="t3n-U8-3Qd" id="dU8-JN-0q8"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="305" y="386"/>
+        </scene>
+    </scenes>
+</document>

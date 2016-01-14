@@ -13,7 +13,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var tableView: UITableView!
     
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     var fetchedResultsController:NSFetchedResultsController = NSFetchedResultsController()
     
     override func viewDidLoad() {
@@ -22,9 +22,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Do any additional setup after loading the view.
         fetchedResultsController = getFetchResultsController()
         fetchedResultsController.delegate = self
-        fetchedResultsController.performFetch(nil)
+        do {
+            try fetchedResultsController.performFetch()
+        } catch _ {
+        }
         
-        print("viewDidLoad called")
+        print("viewDidLoad called", terminator: "")
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -64,24 +67,24 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        print("cellForRowAtIndexPath called")
+        print("cellForRowAtIndexPath called", terminator: "")
         
         let thisUser = fetchedResultsController.objectAtIndexPath(indexPath) as! UserModel
         
-        var cell: UserCell = tableView.dequeueReusableCellWithIdentifier("userCell") as! UserCell
+        let cell: UserCell = tableView.dequeueReusableCellWithIdentifier("userCell") as! UserCell
         
         cell.nameLabel.text = thisUser.userName
         cell.levelLabel.text = "\(thisUser.level)"
         cell.combatLabel.text = "\(thisUser.effectiveCombat)"
         
-        print("returning cell")
+        print("returning cell", terminator: "")
         return cell
     }
     
     // UITableViewDelegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print(indexPath.row)
+        print(indexPath.row, terminator: "")
         
         self.performSegueWithIdentifier("showUserDetailVC", sender: self)
     }
@@ -93,10 +96,13 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
             let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            let context:NSManagedObjectContext = appDel.managedObjectContext!
+            let context:NSManagedObjectContext = appDel.managedObjectContext
             let thisUser = fetchedResultsController.objectAtIndexPath(indexPath) as! UserModel
             context.deleteObject(thisUser)
-            context.save(nil)
+            do {
+                try context.save()
+            } catch _ {
+            }
 
         }
     }
@@ -109,7 +115,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
         tableView.reloadData()
-        print("DidChangeContent called")
+        print("DidChangeContent called", terminator: "")
     }
     
     // Helper functions

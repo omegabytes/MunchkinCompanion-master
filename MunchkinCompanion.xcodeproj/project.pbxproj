@@ -306,6 +306,7 @@
 		DDE4DB031A7D69F200B1FDBF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = AlexGaesser;

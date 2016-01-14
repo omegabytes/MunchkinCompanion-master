@@ -14,7 +14,7 @@ class DataController {
     
     class func jsonAsGameSearchResults (json: NSDictionary) -> [(name: String, idValue: String)] {
         
-        var gameSearchResults: [(name: String, idValue: String)] = []
+        let gameSearchResults: [(name: String, idValue: String)] = []
         var searchResult: (name:String, idValue: String)
         
         

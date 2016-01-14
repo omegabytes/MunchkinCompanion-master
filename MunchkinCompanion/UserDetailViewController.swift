@@ -137,7 +137,7 @@ class UserDetailViewController: UIViewController, UITextFieldDelegate /* AddHelp
         var result = true
         
         if textField == monsterLevelTextField {
-            if count(string) > 0 {
+            if string.characters.count > 0 {
                 let disallowedCharacterSet = NSCharacterSet(charactersInString: "0123456789").invertedSet
                 let replacementStringIsLegal = string.rangeOfCharacterFromSet(disallowedCharacterSet) == nil
                 result = replacementStringIsLegal
@@ -149,14 +149,14 @@ class UserDetailViewController: UIViewController, UITextFieldDelegate /* AddHelp
     // Helper functions
     
     func calculateEffectiveCombat (level: Int, combat: Int, oneShot: Int) -> Int {
-        var effectiveCombat = level + combat + oneShot
+        let effectiveCombat = level + combat + oneShot
         effectiveCombatLabel.text = "\(effectiveCombat)"
         
         return effectiveCombat
     }
     
     func calculateNetCombatResult (effectiveCombatLevel: Int, monsterLevel: Int) -> Int {
-        var netCombatResult = (effectiveCombatLevel - monsterLevel)
+        let netCombatResult = (effectiveCombatLevel - monsterLevel)
         netCombatResultLabel.text = "\(netCombatResult)"
         
         return netCombatResult
@@ -167,13 +167,13 @@ class UserDetailViewController: UIViewController, UITextFieldDelegate /* AddHelp
         userCombatLabel.text = "\(combat)"
         userOneShotLabel.text = "\(oneShot)"
         
-        var monsterLevel = monsterLevelTextField.text.toInt()
+        var monsterLevel = Int(monsterLevelTextField.text!)
        
         effectiveCombat = calculateEffectiveCombat(level, combat: combat, oneShot: oneShot)
-        print(effectiveCombat)
+        print(effectiveCombat, terminator: "")
         if monsterLevel != nil {
             netCombatResult = calculateNetCombatResult(effectiveCombat, monsterLevel: monsterLevel!)
-            print(netCombatResult)
+            print(netCombatResult, terminator: "")
         }
         effectiveCombatLabel.text = "\(effectiveCombat)"
         netCombatResultLabel.text = "\(netCombatResult)"

@@ -27,7 +27,7 @@ class RulesAndFaqsViewController: UIViewController, UITableViewDataSource, UITab
     // MARK - UITableViewDataSource
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ruleCell") as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ruleCell")! as UITableViewCell
         
         return cell
     }
@@ -47,7 +47,7 @@ class RulesAndFaqsViewController: UIViewController, UITableViewDataSource, UITab
     
         func makeRequest (searchString: String) {
     
-            var request = NSMutableURLRequest(URL: NSURL(string: "https://www.boardgamegeek.com/xmlapi2/forum?id=4635")!)
+            let request = NSMutableURLRequest(URL: NSURL(string: "https://www.boardgamegeek.com/xmlapi2/forum?id=4635")!)
             let session = NSURLSession.sharedSession()
             request.HTTPMethod = "GET"
     

@@ -56,6 +56,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DDE4DB221A7D69F200B1FDBF"
+               BuildableName = "MunchkinCompanionTests.xctest"
+               BlueprintName = "MunchkinCompanionTests"
+               ReferencedContainer = "container:MunchkinCompanion.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

@@ -57,25 +57,25 @@ class AddUserViewController: UIViewController, UITextFieldDelegate {
         let appDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         
         let managedObjectContext = appDelegate.managedObjectContext
-        let entityDescription = NSEntityDescription.entityForName("UserModel", inManagedObjectContext: managedObjectContext!)
-        let user = UserModel(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext!)
-        user.userName = userNameTextField.text
+        let entityDescription = NSEntityDescription.entityForName("UserModel", inManagedObjectContext: managedObjectContext)
+        let user = UserModel(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext)
+        user.userName = userNameTextField.text!
         user.level = level
-        println("\(user.level)")
+        print("\(user.level)", terminator: "")
         user.combat = combat
-        println("\(user.combat)")
+        print("\(user.combat)", terminator: "")
         
         appDelegate.saveContext()
         
-        var request = NSFetchRequest(entityName: "UserModel")
+        let request = NSFetchRequest(entityName: "UserModel")
         var error:NSError? = nil
         
-        var results:NSArray = managedObjectContext!.executeFetchRequest(request, error: &error)!
+        let results:NSArray = try! managedObjectContext.executeFetchRequest(request)
         
         for res in results {
-            println(res)
+            print(res, terminator: "")
         }
-        println("done button")
+        print("done button", terminator: "")
 
 
         self.navigationController?.popViewControllerAnimated(true)
@@ -144,7 +144,7 @@ class AddUserViewController: UIViewController, UITextFieldDelegate {
         var result = true
         
         if textField == monsterLevelTextField {
-            if count(string) > 0 {
+            if string.characters.count > 0 {
                 let disallowedCharacterSet = NSCharacterSet(charactersInString: "0123456789").invertedSet
                 let replacementStringIsLegal = string.rangeOfCharacterFromSet(disallowedCharacterSet) == nil
                 result = replacementStringIsLegal
@@ -156,14 +156,14 @@ class AddUserViewController: UIViewController, UITextFieldDelegate {
     // Helper functions
     
     func calculateEffectiveCombat (level: Int, combat: Int, oneShot: Int) -> Int {
-        var effectiveCombat = level + combat + oneShot
+        let effectiveCombat = level + combat + oneShot
         effectiveCombatLabel.text = "\(effectiveCombat)"
         
         return effectiveCombat
     }
     
     func calculateNetCombatResult (effectiveCombatLevel: Int, monsterLevel: Int) -> Int {
-      var netCombatResult = (effectiveCombatLevel - monsterLevel)
+      let netCombatResult = (effectiveCombatLevel - monsterLevel)
         netCombatResultLabel.text = "\(netCombatResult)"
         
         return netCombatResult
@@ -174,13 +174,13 @@ class AddUserViewController: UIViewController, UITextFieldDelegate {
         userCombatLabel.text = "\(combat)"
         userOneShotLabel.text = "\(oneShot)"
         
-        var monsterLevel = monsterLevelTextField.text.toInt()
+        var monsterLevel = Int(monsterLevelTextField.text!)
         
         effectiveCombat = calculateEffectiveCombat(level, combat: combat, oneShot: oneShot)
-        println(effectiveCombat)
+        print(effectiveCombat, terminator: "")
         if monsterLevel != nil {
         netCombatResult = calculateNetCombatResult(effectiveCombat, monsterLevel: monsterLevel!)
-        println(netCombatResult)
+        print(netCombatResult, terminator: "")
         }
         effectiveCombatLabel.text = "\(effectiveCombat)"
         netCombatResultLabel.text = "\(netCombatResult)"

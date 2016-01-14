@@ -8,9 +8,9 @@
 
 import UIKit
 
-class UserDetailViewController: UIViewController, UITextFieldDelegate, AddHelperVCDelegate {
+class UserDetailViewController: UIViewController, UITextFieldDelegate /* AddHelperVCDelegate */{
 
-    var addHelperVC: AddHelperViewController!
+//    var addHelperVC: AddHelperViewController!
     
     var detailUserModel: UserModel!
     var level = 1
@@ -137,7 +137,7 @@ class UserDetailViewController: UIViewController, UITextFieldDelegate, AddHelper
         var result = true
         
         if textField == monsterLevelTextField {
-            if count(string) > 0 {
+            if string.characters.count > 0 {
                 let disallowedCharacterSet = NSCharacterSet(charactersInString: "0123456789").invertedSet
                 let replacementStringIsLegal = string.rangeOfCharacterFromSet(disallowedCharacterSet) == nil
                 result = replacementStringIsLegal
@@ -149,14 +149,14 @@ class UserDetailViewController: UIViewController, UITextFieldDelegate, AddHelper
     // Helper functions
     
     func calculateEffectiveCombat (level: Int, combat: Int, oneShot: Int) -> Int {
-        var effectiveCombat = level + combat + oneShot
+        let effectiveCombat = level + combat + oneShot
         effectiveCombatLabel.text = "\(effectiveCombat)"
         
         return effectiveCombat
     }
     
     func calculateNetCombatResult (effectiveCombatLevel: Int, monsterLevel: Int) -> Int {
-        var netCombatResult = (effectiveCombatLevel - monsterLevel)
+        let netCombatResult = (effectiveCombatLevel - monsterLevel)
         netCombatResultLabel.text = "\(netCombatResult)"
         
         return netCombatResult
@@ -167,13 +167,13 @@ class UserDetailViewController: UIViewController, UITextFieldDelegate, AddHelper
         userCombatLabel.text = "\(combat)"
         userOneShotLabel.text = "\(oneShot)"
         
-        var monsterLevel = monsterLevelTextField.text.toInt()
+        let monsterLevel = Int(monsterLevelTextField.text!)
        
         effectiveCombat = calculateEffectiveCombat(level, combat: combat, oneShot: oneShot)
-        println(effectiveCombat)
+        print(effectiveCombat, terminator: "")
         if monsterLevel != nil {
             netCombatResult = calculateNetCombatResult(effectiveCombat, monsterLevel: monsterLevel!)
-            println(netCombatResult)
+            print(netCombatResult, terminator: "")
         }
         effectiveCombatLabel.text = "\(effectiveCombat)"
         netCombatResultLabel.text = "\(netCombatResult)"
@@ -205,10 +205,10 @@ class UserDetailViewController: UIViewController, UITextFieldDelegate, AddHelper
         
     }
     
-    func didFinishAddingHelper(controller: AddHelperViewController) {
-        self.effectiveCombat = Int(controller.helperBonus)
-        controller.navigationController?.popViewControllerAnimated(true)
-    }
+//    func didFinishAddingHelper(controller: AddHelperViewController) {
+//        self.effectiveCombat = Int(controller.helperBonus)
+//        controller.navigationController?.popViewControllerAnimated(true)
+//    }
     
     
 }

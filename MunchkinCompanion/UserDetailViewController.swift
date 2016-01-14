@@ -167,7 +167,7 @@ class UserDetailViewController: UIViewController, UITextFieldDelegate /* AddHelp
         userCombatLabel.text = "\(combat)"
         userOneShotLabel.text = "\(oneShot)"
         
-        var monsterLevel = Int(monsterLevelTextField.text!)
+        let monsterLevel = Int(monsterLevelTextField.text!)
        
         effectiveCombat = calculateEffectiveCombat(level, combat: combat, oneShot: oneShot)
         print(effectiveCombat, terminator: "")

@@ -21,12 +21,12 @@
 		DDE4DB361A7D6C0000B1FDBF /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE4DB351A7D6C0000B1FDBF /* UserCell.swift */; };
 		DDE4DB3A1A7D6E1A00B1FDBF /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE4DB391A7D6E1A00B1FDBF /* UserDetailViewController.swift */; };
 		DDE4DB3C1A7D713900B1FDBF /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE4DB3B1A7D713900B1FDBF /* AddUserViewController.swift */; };
+		FAE043AE1C48202D00B9AA13 /* MunchkinCompanion WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FAE6818B1B72BE9A0057323F /* MunchkinCompanion WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FAE043B11C48202D00B9AA13 /* MunchkinCompanion WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FAE681951B72BE9A0057323F /* MunchkinCompanion WatchKit App.app */; };
 		FAE681901B72BE9A0057323F /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6818F1B72BE9A0057323F /* InterfaceController.swift */; };
 		FAE681921B72BE9A0057323F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE681911B72BE9A0057323F /* Images.xcassets */; };
-		FAE681961B72BE9A0057323F /* MunchkinCompanion WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = FAE681951B72BE9A0057323F /* MunchkinCompanion WatchKit App.app */; };
 		FAE6819E1B72BE9A0057323F /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE6819C1B72BE9A0057323F /* Interface.storyboard */; };
 		FAE681A01B72BE9A0057323F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE6819F1B72BE9A0057323F /* Images.xcassets */; };
-		FAE681A31B72BE9A0057323F /* MunchkinCompanion WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FAE6818B1B72BE9A0057323F /* MunchkinCompanion WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,32 +37,43 @@
 			remoteGlobalIDString = DDE4DB0A1A7D69F200B1FDBF;
 			remoteInfo = MunchkinCompanion;
 		};
-		FAE681971B72BE9A0057323F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DDE4DB031A7D69F200B1FDBF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FAE681941B72BE9A0057323F;
-			remoteInfo = "MunchkinCompanion WatchKit App";
-		};
-		FAE681A11B72BE9A0057323F /* PBXContainerItemProxy */ = {
+		FAE043AC1C48202D00B9AA13 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DDE4DB031A7D69F200B1FDBF /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = FAE6818A1B72BE9A0057323F;
 			remoteInfo = "MunchkinCompanion WatchKit Extension";
 		};
+		FAE043AF1C48202D00B9AA13 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDE4DB031A7D69F200B1FDBF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAE681941B72BE9A0057323F;
+			remoteInfo = "MunchkinCompanion WatchKit App";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		FAE681AA1B72BE9A0057323F /* Embed App Extensions */ = {
+		FAE043B21C48202D00B9AA13 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				FAE681A31B72BE9A0057323F /* MunchkinCompanion WatchKit Extension.appex in Embed App Extensions */,
+				FAE043AE1C48202D00B9AA13 /* MunchkinCompanion WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAE043B31C48202D00B9AA13 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				FAE043B11C48202D00B9AA13 /* MunchkinCompanion WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -237,12 +248,12 @@
 				DDE4DB071A7D69F200B1FDBF /* Sources */,
 				DDE4DB081A7D69F200B1FDBF /* Frameworks */,
 				DDE4DB091A7D69F200B1FDBF /* Resources */,
-				FAE681AA1B72BE9A0057323F /* Embed App Extensions */,
+				FAE043B31C48202D00B9AA13 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				FAE681A21B72BE9A0057323F /* PBXTargetDependency */,
+				FAE043B01C48202D00B9AA13 /* PBXTargetDependency */,
 			);
 			name = MunchkinCompanion;
 			productName = MunchkinCompanion;
@@ -278,27 +289,28 @@
 			buildRules = (
 			);
 			dependencies = (
-				FAE681981B72BE9A0057323F /* PBXTargetDependency */,
 			);
 			name = "MunchkinCompanion WatchKit Extension";
 			productName = "MunchkinCompanion WatchKit Extension";
 			productReference = FAE6818B1B72BE9A0057323F /* MunchkinCompanion WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit-extension";
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		FAE681941B72BE9A0057323F /* MunchkinCompanion WatchKit App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAE681A81B72BE9A0057323F /* Build configuration list for PBXNativeTarget "MunchkinCompanion WatchKit App" */;
 			buildPhases = (
 				FAE681931B72BE9A0057323F /* Resources */,
+				FAE043B21C48202D00B9AA13 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FAE043AD1C48202D00B9AA13 /* PBXTargetDependency */,
 			);
 			name = "MunchkinCompanion WatchKit App";
 			productName = "MunchkinCompanion WatchKit App";
 			productReference = FAE681951B72BE9A0057323F /* MunchkinCompanion WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp";
+			productType = "com.apple.product-type.application.watchapp2";
 		};
 /* End PBXNativeTarget section */
 
@@ -308,7 +320,7 @@
 			attributes = {
 				LastSwiftMigration = 0720;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = AlexGaesser;
 				TargetAttributes = {
 					DDE4DB0A1A7D69F200B1FDBF = {
@@ -376,7 +388,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAE681961B72BE9A0057323F /* MunchkinCompanion WatchKit App.app in Resources */,
 				FAE681921B72BE9A0057323F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,15 +445,15 @@
 			target = DDE4DB0A1A7D69F200B1FDBF /* MunchkinCompanion */;
 			targetProxy = DDE4DB241A7D69F200B1FDBF /* PBXContainerItemProxy */;
 		};
-		FAE681981B72BE9A0057323F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FAE681941B72BE9A0057323F /* MunchkinCompanion WatchKit App */;
-			targetProxy = FAE681971B72BE9A0057323F /* PBXContainerItemProxy */;
-		};
-		FAE681A21B72BE9A0057323F /* PBXTargetDependency */ = {
+		FAE043AD1C48202D00B9AA13 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FAE6818A1B72BE9A0057323F /* MunchkinCompanion WatchKit Extension */;
-			targetProxy = FAE681A11B72BE9A0057323F /* PBXContainerItemProxy */;
+			targetProxy = FAE043AC1C48202D00B9AA13 /* PBXContainerItemProxy */;
+		};
+		FAE043B01C48202D00B9AA13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAE681941B72BE9A0057323F /* MunchkinCompanion WatchKit App */;
+			targetProxy = FAE043AF1C48202D00B9AA13 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -494,6 +505,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -563,6 +575,7 @@
 				INFOPLIST_FILE = MunchkinCompanion/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "self.edu.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -578,6 +591,7 @@
 				INFOPLIST_FILE = MunchkinCompanion/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "self.edu.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -587,16 +601,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = MunchkinCompanionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "self.edu.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MunchkinCompanion.app/MunchkinCompanion";
 			};
@@ -606,12 +617,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = MunchkinCompanionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "self.edu.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MunchkinCompanion.app/MunchkinCompanion";
 			};
@@ -631,8 +639,12 @@
 				INFOPLIST_FILE = "MunchkinCompanion WatchKit Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = self.edu.MunchkinCompanion.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -647,8 +659,12 @@
 				INFOPLIST_FILE = "MunchkinCompanion WatchKit Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = self.edu.MunchkinCompanion.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -657,6 +673,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -664,11 +681,12 @@
 				);
 				IBSC_MODULE = MunchkinCompanion_WatchKit_Extension;
 				INFOPLIST_FILE = "MunchkinCompanion WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_BUNDLE_IDENTIFIER = self.edu.MunchkinCompanion.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -678,14 +696,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				IBSC_MODULE = MunchkinCompanion_WatchKit_Extension;
 				INFOPLIST_FILE = "MunchkinCompanion WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_BUNDLE_IDENTIFIER = self.edu.MunchkinCompanion.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};

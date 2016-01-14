@@ -12,20 +12,24 @@
 	<dict>
 		<key>553D1D8730EF0AA2980F137A4D5A62FB3FFA06F8</key>
 		<string>https://github.com/omegabytes/MunchkinCompanion.git</string>
+		<key>72F1618D9E794FB82023DAB02831173DA0A6D559</key>
+		<string>https://github.com/omegabytes/MunchkinCompanion-master.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MunchkinCompanion.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>553D1D8730EF0AA2980F137A4D5A62FB3FFA06F8</key>
+		<string>../../../MunchkinCompanion</string>
+		<key>72F1618D9E794FB82023DAB02831173DA0A6D559</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/omegabytes/MunchkinCompanion.git</string>
+	<string>https://github.com/omegabytes/MunchkinCompanion-master.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>553D1D8730EF0AA2980F137A4D5A62FB3FFA06F8</string>
+	<string>72F1618D9E794FB82023DAB02831173DA0A6D559</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>553D1D8730EF0AA2980F137A4D5A62FB3FFA06F8</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MunchkinCompanion</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>72F1618D9E794FB82023DAB02831173DA0A6D559</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MunchkinCompanion-master</string>
 		</dict>
 	</array>
 </dict>

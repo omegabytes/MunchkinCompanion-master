@@ -8,9 +8,9 @@
 
 import UIKit
 
-class UserDetailViewController: UIViewController, UITextFieldDelegate, AddHelperVCDelegate {
+class UserDetailViewController: UIViewController, UITextFieldDelegate /* AddHelperVCDelegate */{
 
-    var addHelperVC: AddHelperViewController!
+//    var addHelperVC: AddHelperViewController!
     
     var detailUserModel: UserModel!
     var level = 1
@@ -170,10 +170,10 @@ class UserDetailViewController: UIViewController, UITextFieldDelegate, AddHelper
         var monsterLevel = monsterLevelTextField.text.toInt()
        
         effectiveCombat = calculateEffectiveCombat(level, combat: combat, oneShot: oneShot)
-        println(effectiveCombat)
+        print(effectiveCombat)
         if monsterLevel != nil {
             netCombatResult = calculateNetCombatResult(effectiveCombat, monsterLevel: monsterLevel!)
-            println(netCombatResult)
+            print(netCombatResult)
         }
         effectiveCombatLabel.text = "\(effectiveCombat)"
         netCombatResultLabel.text = "\(netCombatResult)"
@@ -205,10 +205,10 @@ class UserDetailViewController: UIViewController, UITextFieldDelegate, AddHelper
         
     }
     
-    func didFinishAddingHelper(controller: AddHelperViewController) {
-        self.effectiveCombat = Int(controller.helperBonus)
-        controller.navigationController?.popViewControllerAnimated(true)
-    }
+//    func didFinishAddingHelper(controller: AddHelperViewController) {
+//        self.effectiveCombat = Int(controller.helperBonus)
+//        controller.navigationController?.popViewControllerAnimated(true)
+//    }
     
     
 }

@@ -24,7 +24,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         fetchedResultsController.delegate = self
         fetchedResultsController.performFetch(nil)
         
-        println("viewDidLoad called")
+        print("viewDidLoad called")
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -39,7 +39,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showUserDetailVC" {
             let userDetailVC: UserDetailViewController = segue.destinationViewController as! UserDetailViewController
-            let indexPath = self.tableView.indexPathForSelectedRow()
+            let indexPath = self.tableView.indexPathForSelectedRow
             let thisUser = fetchedResultsController.objectAtIndexPath(indexPath!) as! UserModel
             userDetailVC.detailUserModel = thisUser
         } else if segue.identifier == "showAddUserVC" {
@@ -64,7 +64,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        println("cellForRowAtIndexPath called")
+        print("cellForRowAtIndexPath called")
         
         let thisUser = fetchedResultsController.objectAtIndexPath(indexPath) as! UserModel
         
@@ -74,14 +74,14 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.levelLabel.text = "\(thisUser.level)"
         cell.combatLabel.text = "\(thisUser.effectiveCombat)"
         
-        println("returning cell")
+        print("returning cell")
         return cell
     }
     
     // UITableViewDelegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println(indexPath.row)
+        print(indexPath.row)
         
         self.performSegueWithIdentifier("showUserDetailVC", sender: self)
     }
@@ -109,7 +109,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
         tableView.reloadData()
-        println("DidChangeContent called")
+        print("DidChangeContent called")
     }
     
     // Helper functions

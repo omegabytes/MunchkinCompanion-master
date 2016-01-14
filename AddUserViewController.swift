@@ -61,9 +61,9 @@ class AddUserViewController: UIViewController, UITextFieldDelegate {
         let user = UserModel(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext!)
         user.userName = userNameTextField.text
         user.level = level
-        println("\(user.level)")
+        print("\(user.level)")
         user.combat = combat
-        println("\(user.combat)")
+        print("\(user.combat)")
         
         appDelegate.saveContext()
         
@@ -73,9 +73,9 @@ class AddUserViewController: UIViewController, UITextFieldDelegate {
         var results:NSArray = managedObjectContext!.executeFetchRequest(request, error: &error)!
         
         for res in results {
-            println(res)
+            print(res)
         }
-        println("done button")
+        print("done button")
 
 
         self.navigationController?.popViewControllerAnimated(true)
@@ -177,10 +177,10 @@ class AddUserViewController: UIViewController, UITextFieldDelegate {
         var monsterLevel = monsterLevelTextField.text.toInt()
         
         effectiveCombat = calculateEffectiveCombat(level, combat: combat, oneShot: oneShot)
-        println(effectiveCombat)
+        print(effectiveCombat)
         if monsterLevel != nil {
         netCombatResult = calculateNetCombatResult(effectiveCombat, monsterLevel: monsterLevel!)
-        println(netCombatResult)
+        print(netCombatResult)
         }
         effectiveCombatLabel.text = "\(effectiveCombat)"
         netCombatResultLabel.text = "\(netCombatResult)"
